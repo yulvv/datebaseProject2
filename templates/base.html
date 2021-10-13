@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/index.css">
+    <title>首页</title>
+</head>
+<body>
+
+    <div class="User-box" >
+        {% if request.user.is_authenticated %}
+            <div class="Up-box" >
+                <a href="/customer"><p> Hello {{ CustomerName }}</p></a>
+            </div>
+            <div class="Up-box" >
+                <a href="/logout"><p>LOGOUT</p></a>
+            </div>
+        {% else %}
+        <div class="Up-box" >
+            <a href="/login"><p>LOGIN</p></a>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="divSearch-box">
+        <form action="/search" method="GET" class="Search-box">
+                <input type="text" name="Question" maxlength="20"  style="width:800px;height:30px">
+                <input type="button" value="Search" tyle="height:30px">
+        </form>
+    </div>
+
+    {% block content %}
+
+    {% endblock  %}
+
+    <div class="Tail-box">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+body{
+    width: auto;
+}
+.User-box{
+    position: relative;
+    width: max-content;
+    height: inherit;
+}
+.Up-box{
+    float: right;
+    width: auto;
+    height: auto;
+    margin: 5pt;
+}
+
+.Search-box{
+    text-align: center;
+    color: black;
+}
+
+.Product{
+    /* text-align: center; */
+    color: red;
+    background-color: aquamarine;
+    width: 200pt;
+    height: 200pt;
+    float: left;
+    margin: 15pt;
+}
+.Main-body{
+    text-align: center;
+    margin-left: 100pt;
+}

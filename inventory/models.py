@@ -47,6 +47,9 @@ class Inventory(models.Model):
     # 产品颜色
     product_color = models.CharField(max_length=40, verbose_name=_("产品颜色"), null=False)
 
+    # 产品图片
+    product_image = models.CharField(max_length=40, verbose_name=_("产品图片URL"))
+
 # 定义客户表单
 class Client(models.Model):
     # 继承models类
