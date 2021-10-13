@@ -80,20 +80,20 @@ WSGI_APPLICATION = 'datebaseProject.wsgi.application'
 
 
 # Recommend SQL server setting
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'DatabaseProject',
-#         'HOST': '127.0.0.1',
-#         'POST': '1433',
-#         'USER': 'sa',
-#         'PASSWORD': '123',
-#         'OPTIONS':{
-#             'driver':'ODBC Driver 17 for SQL Server',
-#             'MARS_Connection': True,
-#         },
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'DatabaseProject',
+        'HOST': '127.0.0.1',
+        'POST': '1433',
+        'USER': 'sa',
+        'PASSWORD': '123',
+        'OPTIONS':{
+            'driver':'ODBC Driver 17 for SQL Server',
+            'MARS_Connection': True,
+        },
+    }
+}
 
 # Mysql
 # DATABASES = {
@@ -150,5 +150,6 @@ STATICFILES_DIRS = [
     (os.path.join(BASE_DIR, 'static'))
 ]
 
+# APPEND_SLASH
 APPEND_SLASH = False
 
