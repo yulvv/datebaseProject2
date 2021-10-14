@@ -30,5 +30,13 @@ body{
 }
 .Main-body{
     text-align: center;
-    margin-left: 100pt;
+    margin-left: 0;
+}
+.Login-box{
+    position: absolute;
+    text-align: center;
+    margin-left: 200pt;
+    width: 500pt;
+    height: inherit;
+    margin-top: 50pt;
 }
