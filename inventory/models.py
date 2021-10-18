@@ -276,7 +276,8 @@ class Brand(models.Model):
 
     # 品牌号（CHAR，PRIMARY KEY)，
     # 品牌名称（CHAR，UNIQUE NOT NULL)，
-    # 品牌等级（CHAR，NOT NULL);
+    # char(40)
+    # char(40)（CHAR，NOT NULL);
 
     # 品牌号
     brand_id = models.CharField(primary_key=True, verbose_name=_("品牌号"), default="", max_length=40)
