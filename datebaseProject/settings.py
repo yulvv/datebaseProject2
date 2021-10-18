@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'datebaseProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,16 +78,34 @@ WSGI_APPLICATION = 'datebaseProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
+# Recommend SQL server setting
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerce_system',
-        'USER': 'yulv',
-        'PASSWORD': 'gyqxSO8jgrcMyxSD',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'DatabaseProject',
         'HOST': '127.0.0.1',
-        'PORT': '3306'
+        'POST': '1433',
+        'USER': 'sa',
+        'PASSWORD': '123',
+        'OPTIONS':{
+            'driver':'ODBC Driver 17 for SQL Server',
+            'MARS_Connection': True,
+        },
     }
 }
+
+# Mysql
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ecommerce_system',
+#         'USER': 'yulv',
+#         'PASSWORD': 'gyqxSO8jgrcMyxSD',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306'
+#     }
+# }
 
 
 # Password validation
@@ -125,4 +144,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# css statiic files
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    (os.path.join(BASE_DIR, 'static'))
+]
+
+# APPEND_SLASH
+APPEND_SLASH = False
+

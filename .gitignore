@@ -1,0 +1,4 @@
+.vscode
+.idea
+databaseProdect/__pycache__
+inventory/__pycache__
